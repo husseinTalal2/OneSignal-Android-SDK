@@ -56,12 +56,13 @@ class NotificationOpenedProcessor {
       if (!isOneSignalIntent(intent))
          return;
 
-      if (context != null)
+      if (context != null) {
          OneSignal.initWithContext(context.getApplicationContext());
 
-      handleDismissFromActionButtonPress(context, intent);
+         handleDismissFromActionButtonPress(context, intent);
 
-      processIntent(context, intent);
+         processIntent(context, intent);
+      }
    }
 
    // Was Bundle created from our SDK? Prevents external Intents
